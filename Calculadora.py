@@ -15,10 +15,12 @@ class Calculadora:
         return result
 
     def calculoMultiplicacao(self):
+
         result = self.numeroUm * self.numeroDois
         self.historicOperacao.append(f"{self.numeroUm} * {self.numeroDois} = {result}")
         return result
         
+
     def calculoDivisao(self):
         try:
             result = self.numeroUm / self.numeroDois
@@ -58,3 +60,4 @@ class Calculadora:
 
         else:
             print("ESCOLHA INCORRETA, TENTE NOVAMENTE!")
+
