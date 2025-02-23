@@ -1,19 +1,25 @@
 from Calculadora import Calculadora
 
-escolherOperacao = input("Digite (1) para Adição, (2) para Subtração, (3) para Multiplicação ou (4) para Divisão: ")
+escolherOperacao = int(input("Digite (1) para Adição, (2) para Subtração, (3) para Multiplicação ou (4) para Divisão: "))
 
-calcConta = Calculadora(int(input("Digite o primeiro numero para o calculo: ")), int(input("Digite o segundo numero para o calculo: ")))
+numeroUm = int(input("Digite o primeiro número para o cálculo: "))
+numeroDois = int(input("Digite o segundo número para o cálculo: "))
+
+calcConta = Calculadora(numeroUm,numeroDois )
 
 if escolherOperacao == 1:
     print("Resultado: ", calcConta.calculoAdicao())
 
 elif escolherOperacao == 2:
     print("Resultado: ", calcConta.calculoSubtracao())
-    
+
 elif escolherOperacao == 3:
-    print("Resultado: ", calcConta.caluloMultiplicacao())
+    print("Resultado: ", calcConta.calculoMultiplicacao())
 
 elif escolherOperacao == 4:
-    print("Resultado: ", calcConta.calculoDivisao())
+    resultado = calcConta.calculoDivisao()
+    if resultado is not None:  
+        print("Resultado: ", resultado)
+
 else:
-    print("ESCOLHA INCORRETA, TENTE NOVAMENTE!")
+    print("OPÇÃO INCORRETA, ESCOLA UM NUMERO DE 1 À 4!")
