@@ -10,6 +10,7 @@ class Calculadora:
         return self.numeroUm - self.numeroDois
 
     def calculoMultiplicacao(self):
+
         return self.numeroUm * self.numeroDois
 
     def calculoDivisao(self):
@@ -37,3 +38,4 @@ class Calculadora:
 
         else:
             print("ESCOLHA INCORRETA, TENTE NOVAMENTE!")
+
