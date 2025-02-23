@@ -1,10 +1,18 @@
 from Calculadora import Calculadora  
 
-numeroUm = int(input("Digite o primeiro número para o cálculo: "))
-numeroDois = int(input("Digite o segundo número para o cálculo: "))
+while True:
+    escolherOperacao = int(input("\nDigite (1) para Adição, (2) para Subtração, (3) para Multiplicação, (4) para Divisão ou (0) para sair: "))
 
-calcConta = Calculadora(numeroUm, numeroDois)
+    if escolherOperacao == 0:
+        print("\nSaindo da calculadora...")
+        break  
 
-escolherOperacao = int(input("Digite (1) para Adição, (2) para Subtração, (3) para Multiplicação ou (4) para Divisão: "))
+    numeroUm = int(input("Digite o primeiro número para o cálculo: "))
+    numeroDois = int(input("Digite o segundo número para o cálculo: "))
 
-calcConta.calcular(escolherOperacao)
+    calcConta = Calculadora(numeroUm, numeroDois)
+    calcConta.calcular(escolherOperacao)
+
+    
+    print("\nHistórico de operações:")
+    calcConta.Historico()
