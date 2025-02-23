@@ -2,23 +2,45 @@ class Calculadora:
     def __init__(self, numeroUm, numeroDois):
         self.numeroUm = numeroUm
         self.numeroDois = numeroDois
+        self.historicOperacao = [] #lista vazia, armazena as informações
 
     def calculoAdicao(self):
-        return self.numeroUm + self.numeroDois
+        result = self.numeroUm + self.numeroDois
+        self.historicOperacao.append(f"{self.numeroUm} + {self.numeroDois} = {result}") #regitra e grava na ultima posição da lista .append()
+        return result
 
     def calculoSubtracao(self):
-        return self.numeroUm - self.numeroDois
+        result = self.numeroUm - self.numeroDois
+        self.historicOperacao.append(f"{self.numeroUm} - {self.numeroDois} = {result}")
+        return result
 
     def calculoMultiplicacao(self):
 
-        return self.numeroUm * self.numeroDois
+        result = self.numeroUm * self.numeroDois
+        self.historicOperacao.append(f"{self.numeroUm} * {self.numeroDois} = {result}")
+        return result
+        
 
     def calculoDivisao(self):
         try:
-            return self.numeroUm / self.numeroDois
+            result = self.numeroUm / self.numeroDois
+            self.historicOperacao.append(f"{self.numeroUm} / {self.numeroDois} = {result}")
+            return result
         except ZeroDivisionError:
             print("DIVISÃO POR ZERO NÃO É PERMITIDA, TENTE NOVAMENTE!")
             return None
+        
+    def Historico(self):
+        if not self.historicOperacao:
+            print("Nenhuma operação realizada ainda.")
+        else:
+            print("Histórico de operações:")
+            for operacao in self.historicOperacao:
+                print(operacao)
+
+    def limpHistorico(self):
+        self.historico.clear()
+        print("Histórico de operações apagado com sucesso!")
 
     def calcular(self, operacao):
         
@@ -33,7 +55,7 @@ class Calculadora:
 
         elif operacao == 4:
             resultado = self.calculoDivisao()
-            if resultado is not None:  
+            if resultado is not None:       
                 print("Resultado:", resultado)
 
         else:
